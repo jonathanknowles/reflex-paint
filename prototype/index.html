@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <style type="text/css">
+            body { background-color:#000000 }
+            input[type="radio"] { display: none }
+            input[type="radio"] + label { display: inline-block
+                                        ; width: 32px
+                                        ; height: 32px
+                                        ; transition-duration: 300ms }
+            input#c0[type="radio"]:checked       + label { background-image: url('brush-c0-checked.svg') }
+            input#c1[type="radio"]:checked       + label { background-image: url('brush-c1-checked.svg') }
+            input#c2[type="radio"]:checked       + label { background-image: url('brush-c2-checked.svg') }
+            input#c3[type="radio"]:checked       + label { background-image: url('brush-c3-checked.svg') }
+            input#c4[type="radio"]:checked       + label { background-image: url('brush-c4-checked.svg') }
+            input#c5[type="radio"]:checked       + label { background-image: url('brush-c5-checked.svg') }
+            input#c6[type="radio"]:checked       + label { background-image: url('brush-c6-checked.svg') }
+            input#c7[type="radio"]:checked       + label { background-image: url('brush-c7-checked.svg') }
+            input#s0[type="radio"]:checked       + label { background-image: url('brush-s0-checked.svg') }
+            input#s1[type="radio"]:checked       + label { background-image: url('brush-s1-checked.svg') }
+            input#s2[type="radio"]:checked       + label { background-image: url('brush-s2-checked.svg') }
+            input#s3[type="radio"]:checked       + label { background-image: url('brush-s3-checked.svg') }
+            input#s4[type="radio"]:checked       + label { background-image: url('brush-s4-checked.svg') }
+            input#s5[type="radio"]:checked       + label { background-image: url('brush-s5-checked.svg') }
+            input#s6[type="radio"]:checked       + label { background-image: url('brush-s6-checked.svg') }
+            input#s7[type="radio"]:checked       + label { background-image: url('brush-s7-checked.svg') }
+            input#c0[type="radio"]:not(:checked) + label { background-image: url('brush-c0.svg')         }
+            input#c1[type="radio"]:not(:checked) + label { background-image: url('brush-c1.svg')         }
+            input#c2[type="radio"]:not(:checked) + label { background-image: url('brush-c2.svg')         }
+            input#c3[type="radio"]:not(:checked) + label { background-image: url('brush-c3.svg')         }
+            input#c4[type="radio"]:not(:checked) + label { background-image: url('brush-c4.svg')         }
+            input#c5[type="radio"]:not(:checked) + label { background-image: url('brush-c5.svg')         }
+            input#c6[type="radio"]:not(:checked) + label { background-image: url('brush-c6.svg')         }
+            input#c7[type="radio"]:not(:checked) + label { background-image: url('brush-c7.svg')         }
+            input#s0[type="radio"]:not(:checked) + label { background-image: url('brush-s0.svg')         }
+            input#s1[type="radio"]:not(:checked) + label { background-image: url('brush-s1.svg')         }
+            input#s2[type="radio"]:not(:checked) + label { background-image: url('brush-s2.svg')         }
+            input#s3[type="radio"]:not(:checked) + label { background-image: url('brush-s3.svg')         }
+            input#s4[type="radio"]:not(:checked) + label { background-image: url('brush-s4.svg')         }
+            input#s5[type="radio"]:not(:checked) + label { background-image: url('brush-s5.svg')         }
+            input#s6[type="radio"]:not(:checked) + label { background-image: url('brush-s6.svg')         }
+            input#s7[type="radio"]:not(:checked) + label { background-image: url('brush-s7.svg')         }
+        </style>
+    </head>
+    <body>
+        <canvas>
+        </canvas>
+        <form class="brush-size">
+            <input type="radio" name="brush-size" id="s0" value="s0" checked/><label for="s0"></label>
+            <input type="radio" name="brush-size" id="s1" value="s1"        /><label for="s1"></label>
+            <input type="radio" name="brush-size" id="s2" value="s2"        /><label for="s2"></label>
+            <input type="radio" name="brush-size" id="s3" value="s3"        /><label for="s3"></label>
+            <input type="radio" name="brush-size" id="s4" value="s4"        /><label for="s4"></label>
+            <input type="radio" name="brush-size" id="s5" value="s5"        /><label for="s5"></label>
+            <input type="radio" name="brush-size" id="s6" value="s6"        /><label for="s6"></label>
+            <input type="radio" name="brush-size" id="s7" value="s7"        /><label for="s7"></label>
+        </form>
+        <form class="brush-colour">
+            <input type="radio" name="brush-colour" id="c0" value="c0" checked/><label for="c0"></label>
+            <input type="radio" name="brush-colour" id="c1" value="c1"        /><label for="c1"></label>
+            <input type="radio" name="brush-colour" id="c2" value="c2"        /><label for="c2"></label>
+            <input type="radio" name="brush-colour" id="c3" value="c3"        /><label for="c3"></label>
+            <input type="radio" name="brush-colour" id="c4" value="c4"        /><label for="c4"></label>
+            <input type="radio" name="brush-colour" id="c5" value="c5"        /><label for="c5"></label>
+            <input type="radio" name="brush-colour" id="c6" value="c6"        /><label for="c6"></label>
+            <input type="radio" name="brush-colour" id="c7" value="c7"        /><label for="c7"></label>
+        </form>
+    </body>
+</html>
