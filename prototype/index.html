@@ -1,10 +1,38 @@
 <html>
     <head>
         <style type="text/css">
-            body { background-color: #000000 }
+            * { padding: 0px
+              ; margin: 0px }
+            html { width: 412px }
+            body { width: 412px
+                 ; background-color: #000000 }
+            canvas { width: 412px
+                   ; height: 502px }
+            div.control-panel { width: 400px
+                              ; padding: 6px }
+            form { width: 400px
+				 ; margin-top: 6px }
+            div.button-panel { width: 400px
+                             ; margin-top: 12px }
+            div.button-group { width: 96px
+                             ; display: inline-block }
+            div.button-group + div.button-group { margin-left: 50px }
+            button { width: 96px
+                   ; height: 40px
+                   ; color: #ffffff
+                   ; background-color: #000000
+                   ; border-radius: 8px
+                   ; border-style: solid
+                   ; border-width: 3px
+                   ; font-size: 16px
+                   ; outline: none
+                   ; transition-duration: 300ms }
+            button:not(:active) { border-color: #222222 }
+            button:active { border-color: #ffffff }
+            button + button { margin-top: 12px }
             input[type="radio"] { display: none }
             input[type="radio"] + label { display: inline-block
-                                        ; zoom: 140%
+                                        ; zoom: 144%
                                         ; width: 32px
                                         ; height: 32px
                                         ; transition-duration: 300ms }
@@ -40,58 +68,48 @@
             input#s5[type="radio"]:not(:checked) + label { background-image: url('brush-s5.svg')         }
             input#s6[type="radio"]:not(:checked) + label { background-image: url('brush-s6.svg')         }
             input#s7[type="radio"]:not(:checked) + label { background-image: url('brush-s7.svg')         }
-            div.button-group { width: 96px
-                             ; display: inline-block }
-            div.button-group + div.button-group { margin-left: 44px }
-            button { width: 96px
-                   ; height: 40px
-                   ; color: #ffffff
-                   ; background-color: #000000
-                   ; border-radius: 8px
-                   ; border-style: solid
-                   ; border-width: 3px
-                   ; font-size: 18px
-                   ; outline: none
-                   ; transition-duration: 300ms }
-            button:not(:active) { border-color: #222222 }
-            button:active { border-color: #ffffff }
-            button + button { margin-top: 16px }
         </style>
     </head>
     <body>
-        <canvas>
-        </canvas>
-        <form class="brush-size">
-            <input type="radio" name="brush-size" id="s0" value="s0" checked/><label for="s0"></label>
-            <input type="radio" name="brush-size" id="s1" value="s1"        /><label for="s1"></label>
-            <input type="radio" name="brush-size" id="s2" value="s2"        /><label for="s2"></label>
-            <input type="radio" name="brush-size" id="s3" value="s3"        /><label for="s3"></label>
-            <input type="radio" name="brush-size" id="s4" value="s4"        /><label for="s4"></label>
-            <input type="radio" name="brush-size" id="s5" value="s5"        /><label for="s5"></label>
-            <input type="radio" name="brush-size" id="s6" value="s6"        /><label for="s6"></label>
-            <input type="radio" name="brush-size" id="s7" value="s7"        /><label for="s7"></label>
-        </form>
-        <form class="brush-colour">
-            <input type="radio" name="brush-colour" id="c0" value="c0" checked/><label for="c0"></label>
-            <input type="radio" name="brush-colour" id="c1" value="c1"        /><label for="c1"></label>
-            <input type="radio" name="brush-colour" id="c2" value="c2"        /><label for="c2"></label>
-            <input type="radio" name="brush-colour" id="c3" value="c3"        /><label for="c3"></label>
-            <input type="radio" name="brush-colour" id="c4" value="c4"        /><label for="c4"></label>
-            <input type="radio" name="brush-colour" id="c5" value="c5"        /><label for="c5"></label>
-            <input type="radio" name="brush-colour" id="c6" value="c6"        /><label for="c6"></label>
-            <input type="radio" name="brush-colour" id="c7" value="c7"        /><label for="c7"></label>
-        </form>
-        <div class="button-group">
-            <button id="undo">undo</button>
-            <button id="redo">redo</button>
+        <div class="paint-area">
+            <canvas width="1440" height="1760">
+            </canvas>
         </div>
-        <div class="button-group">
-            <button id="load">load</button>
-            <button id="save">save</button>
-        </div>
-        <div class="button-group">
-            <button id="clear">clear</button>
-            <button id="clear">share</button>
+        <div class="control-panel">
+            <form class="brush-size">
+                <input type="radio" name="brush-size" id="s0" value="s0" checked/><label for="s0"></label>
+                <input type="radio" name="brush-size" id="s1" value="s1"        /><label for="s1"></label>
+                <input type="radio" name="brush-size" id="s2" value="s2"        /><label for="s2"></label>
+                <input type="radio" name="brush-size" id="s3" value="s3"        /><label for="s3"></label>
+                <input type="radio" name="brush-size" id="s4" value="s4"        /><label for="s4"></label>
+                <input type="radio" name="brush-size" id="s5" value="s5"        /><label for="s5"></label>
+                <input type="radio" name="brush-size" id="s6" value="s6"        /><label for="s6"></label>
+                <input type="radio" name="brush-size" id="s7" value="s7"        /><label for="s7"></label>
+            </form>
+            <form class="brush-colour">
+                <input type="radio" name="brush-colour" id="c0" value="c0" checked/><label for="c0"></label>
+                <input type="radio" name="brush-colour" id="c1" value="c1"        /><label for="c1"></label>
+                <input type="radio" name="brush-colour" id="c2" value="c2"        /><label for="c2"></label>
+                <input type="radio" name="brush-colour" id="c3" value="c3"        /><label for="c3"></label>
+                <input type="radio" name="brush-colour" id="c4" value="c4"        /><label for="c4"></label>
+                <input type="radio" name="brush-colour" id="c5" value="c5"        /><label for="c5"></label>
+                <input type="radio" name="brush-colour" id="c6" value="c6"        /><label for="c6"></label>
+                <input type="radio" name="brush-colour" id="c7" value="c7"        /><label for="c7"></label>
+            </form>
+            <div class="button-panel">
+                <div class="button-group">
+                    <button id="undo">undo</button>
+                    <button id="redo">redo</button>
+                </div>
+                <div class="button-group">
+                    <button id="load">load</button>
+                    <button id="save">save</button>
+                </div>
+                <div class="button-group">
+                    <button id="clear">clear</button>
+                    <button id="clear">share</button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
