@@ -40,6 +40,21 @@
             input#s5[type="radio"]:not(:checked) + label { background-image: url('brush-s5.svg')         }
             input#s6[type="radio"]:not(:checked) + label { background-image: url('brush-s6.svg')         }
             input#s7[type="radio"]:not(:checked) + label { background-image: url('brush-s7.svg')         }
+            div.button-group { width: 96px
+                             ; display: inline-block }
+            div.button-group + div.button-group { margin-left: 42px }
+            button { width: 96px
+                   ; height: 40px
+                   ; color: #ffffff
+                   ; background-color: #000000
+                   ; border-radius: 8px
+                   ; border-style: solid
+                   ; border-width: 3px
+                   ; outline: none
+                   ; transition-duration: 300ms }
+            button:not(:active) { border-color: #222222 }
+            button:active { border-color: #ffffff }
+            button + button { margin-top: 16px }
         </style>
     </head>
     <body>
@@ -65,5 +80,17 @@
             <input type="radio" name="brush-colour" id="c6" value="c6"        /><label for="c6"></label>
             <input type="radio" name="brush-colour" id="c7" value="c7"        /><label for="c7"></label>
         </form>
+        <div class="button-group">
+            <button id="undo">undo</button>
+            <button id="redo">redo</button>
+        </div>
+        <div class="button-group">
+            <button id="load">load</button>
+            <button id="save">save</button>
+        </div>
+        <div class="button-group">
+            <button id="clear">clear</button>
+            <button id="clear">share</button>
+        </div>
     </body>
 </html>
